@@ -1,3 +1,9 @@
+# EXPERIMENTAL - WORK IN PROGRESS
+
+---------------------------------
+
+
+
 # Uploadcare on demand package with helpers for Meteor
 
 Package to use Uploadcare in Meteor, loads on demand, optional callback.
