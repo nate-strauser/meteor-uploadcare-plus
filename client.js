@@ -5,16 +5,16 @@ loadUploadcare = function(key, callback){
         key = Meteor.settings.public.uploadcare.publickey;
 
     if(key){
+        window.UPLOADCARE_PUBLIC_KEY = key;
+
         // Functions to run after the script tag has loaded
         var loadCallback = function() {
-          window.UPLOADCARE_PUBLIC_KEY = key;
-
           if (Object.prototype.toString.call(callback) === "[object Function]")
             callback();
         };
 
         // If the script doesn't load
-        var  = function(error) {
+        var errorCallback = function(error) {
           if(typeof console !== "undefined") {
             console.log(error);
           }
@@ -44,7 +44,6 @@ UI.registerHelper("uploadcareUUIDToImageUrl", function(uuid, operations) {
     var cdn = "http://www.ucarecdn.com/"
     if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.uploadcare && Meteor.settings.public.uploadcare.cdn)
       cdn = Meteor.settings.public.uploadcare.cdn;
-
 
     url = cdn + uuid + "/";
     if(operations)

@@ -1,9 +1,3 @@
-# EXPERIMENTAL - WORK IN PROGRESS
-
----------------------------------
-
-
-
 # Uploadcare on demand package with helpers for Meteor
 
 Package to use Uploadcare in Meteor, loads on demand, optional callback.
@@ -47,6 +41,7 @@ if you have specific routes that need to use uploadcare, you can load them for j
 Router.onBeforeAction(function(){
   loadUploadcare('<YOUR KEY>');
   //can leave out key if its in settings
+  this.next();
 },{only:['<ROUTE NAME>','<ROUTE NAME>']});
 ```
 
