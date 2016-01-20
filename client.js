@@ -41,7 +41,7 @@ loadUploadcare = function(key, callback){
 UI.registerHelper("uploadcareUUIDToImageUrl", function(uuid, operations) {
   var url = "";
   if(uuid){
-    var cdn = "//www.ucarecdn.com/"
+    var cdn = "https://ucarecdn.com/"
     if(Meteor.settings && Meteor.settings.public && Meteor.settings.public.uploadcare && Meteor.settings.public.uploadcare.cdn)
       cdn = Meteor.settings.public.uploadcare.cdn;
 

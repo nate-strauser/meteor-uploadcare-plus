@@ -16,7 +16,7 @@ meteor add nate-strauser:uploadcare-plus
   "public" : {
     "uploadcare":{
       "publickey":"<YOUR PUBLIC API KEY, looks like xxxxxxxxxxxxxxxxx>",
-      "cdn":"<CUSTOM CDN DOMAIN, defaults to '//www.ucarecdn.com/'>"
+      "cdn":"<CUSTOM CDN DOMAIN, defaults to 'https://ucarecdn.com/'>"
     }
   }
 }
