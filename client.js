@@ -23,7 +23,7 @@ loadUploadcare = function(key, callback){
         // Generate a script tag
         var script = document.createElement("script");
         script.type = "text/javascript";
-        script.src = "https://ucarecdn.com/widget/2.0.2/uploadcare/uploadcare.min.js";
+        script.src = "https://ucarecdn.com/widget/2.8.0/uploadcare/uploadcare.full.min.js";
         script.onload = loadCallback;
         script.onerror = errorCallback;
 

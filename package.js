@@ -1,7 +1,7 @@
 Package.describe({
   name:"natestrauser:uploadcare-plus",
   summary: "uploadcare script packaged for Meteor with helpers and utilities",
-  version: "2.0.2_6",
+  version: "2.8.0",
   git: "https://github.com/nate-strauser/meteor-uploadcare-plus.git"
 });
 
