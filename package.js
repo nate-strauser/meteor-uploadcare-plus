@@ -5,13 +5,15 @@ Package.describe({
   git: "https://github.com/nate-strauser/meteor-uploadcare-plus.git"
 });
 
-Package.on_use(function (api) {
+Package.on_use(function(api) {
   api.versionsFrom("1.0");
-  api.use([
-    'underscore',
-    'ui']
-  , 'client');
+  api.use(["check", "ui"], "client");
+  api.add_files(["client.js"], "client");
+  api.export(["loadUploadcare", "UCPlus"], "client");
+});
 
-  api.add_files(['client.js'],'client');
-  api.export('loadUploadcare', 'client');
+Package.on_test(function(api) {
+  api.use(["check", "tinytest", "ui"], "client");
+  api.use("natestrauser:uploadcare-plus");
+  api.add_files("tests/uploadcare-tests.js", "client");
 });
