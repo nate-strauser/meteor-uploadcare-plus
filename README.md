@@ -28,16 +28,19 @@ if you specify a publickey, the call to `loadUploadcare()` does not need a key a
 
 Load once for your whole application at startup or as needed from template created or rendered functions
 ```
-loadUploadcare('<YOUR PUBLIC KEY>');
-//can leave out key if its in settings
+import {loadUploadcare} from 'meteor/natestrauser:uploadcare-plus';
+
+loadUploadcare('<YOUR PUBLIC KEY>'); // you can leave the key out if it's in settings
 ```
 
-You can call this over and over again.  It will detect if uploadcare has already been loaded, only loading the script when needed.
+You can call this over and over again. It will detect if uploadcare has already been loaded, only loading the script when needed.
 
 ## Iron Router Integration
 
 if you have specific routes that need to use uploadcare, you can load them for just these routes
 ```
+import {loadUploadcare} from 'meteor/natestrauser:uploadcare-plus';
+
 Router.onBeforeAction(function(){
   loadUploadcare('<YOUR KEY>');
   //can leave out key if its in settings
