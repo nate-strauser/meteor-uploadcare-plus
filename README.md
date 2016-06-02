@@ -15,20 +15,34 @@ meteor add nate-strauser:uploadcare-plus
 {
   "public" : {
     "uploadcare":{
-      "publickey":"<YOUR PUBLIC API KEY, looks like xxxxxxxxxxxxxxxxx>",
-      "cdn":"<CUSTOM CDN DOMAIN, defaults to 'https://ucarecdn.com/'>"
+      "public_key":"<YOUR_PUBLIC_API_KEY>"
     }
   }
 }
 ```
-if you specify a publickey, the call to `loadUploadcare()` does not need a key arguement, it will read from the settings
 
+If you specify a public_key, the call to `UploadCarePlus.load()` does not need a key argument, it will read from the settings.
+
+You can specify more globals (https://uploadcare.com/documentation/widget/#advanced-configuration) in the configuration if you wish. Just make them lowercase and strip the "UPLOADCARE_" substring. For example:
+
+```
+{
+  "public" : {
+    "uploadcare":{
+      "public_key":"<PUBLIC_KEY>",
+      "images_only": true,
+      "locale": "es",
+      "cdn_base": "https://ucarecdn.com/"
+    }
+  }
+}
+```
 
 ## On demand loading
 
 Load once for your whole application at startup or as needed from template created or rendered functions
 ```
-loadUploadcare('<YOUR PUBLIC KEY>');
+UploadCarePlus.load('<YOUR PUBLIC KEY>');
 //can leave out key if its in settings
 ```
 
@@ -39,7 +53,7 @@ You can call this over and over again.  It will detect if uploadcare has already
 if you have specific routes that need to use uploadcare, you can load them for just these routes
 ```
 Router.onBeforeAction(function(){
-  loadUploadcare('<YOUR KEY>');
+  UploadCarePlus.load('<YOUR KEY>');
   //can leave out key if its in settings
   this.next();
 },{only:['<ROUTE NAME>','<ROUTE NAME>']});
