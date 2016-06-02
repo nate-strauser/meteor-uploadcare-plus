@@ -94,7 +94,7 @@ UI.registerHelper("uploadcareUUIDToImageUrl", function(uuid, operations) {
     }
 
     url = cdn + uuid + "/";
-    if (operations) {
+    if (typeof operations === 'string' && operations != "") {
       url += operations;
     }
   }
