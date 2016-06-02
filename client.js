@@ -36,7 +36,7 @@ UploadCarePlus._setInitParams = function(public_key) {
 }
 
 // Public
-UploadCarePlus.loadUploadcare = function(public_key, callback) {
+UploadCarePlus.load = function(public_key, callback) {
   // TODO: Shift arguments to support just callback
   if (typeof window.uploadcare === "undefined") {
     if (! public_key) {
@@ -78,8 +78,8 @@ UploadCarePlus.loadUploadcare = function(public_key, callback) {
 // Public (deprecated)
 loadUploadcare = function(key, callback) {
   console.log("uploadcare-plus - loadUploadcare is deprecated. " +
-              "Use UploadCarePlus.loadUploadcare instead")
-  UploadCarePlus.loadUploadcare(key, callback);
+              "Use UploadCarePlus.load instead")
+  UploadCarePlus.load(key, callback);
 }
 
 // Public

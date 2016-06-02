@@ -40,6 +40,6 @@ Tinytest.add('setInitParams with some settings', function(test) {
   delete window.UPLOADCARE_PREVIEW_STEP;
 });
 
-Tinytest.add('loadUploadcare with invalid public key type', function(test) {
-  test.throws(function() { UploadCarePlus.loadUploadcare({}); });
+Tinytest.add('load with invalid public key type', function(test) {
+  test.throws(function() { UploadCarePlus.load({}); });
 });
