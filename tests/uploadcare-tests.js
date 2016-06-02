@@ -1,5 +1,5 @@
 Tinytest.add('getPublicKey with no settings', function(test) {
-  var result = UCPlus._getPublicKey();
+  var result = UploadCarePlus._getPublicKey();
   test.equal(result, undefined);
 });
 
@@ -8,12 +8,12 @@ Tinytest.add('getPublicKey with public key settings', function(test) {
   Meteor.settings.public = {};
   Meteor.settings.public.uploadcare = {};
   Meteor.settings.public.uploadcare.public_key = '<ANY>';
-  var result = UCPlus._getPublicKey();
+  var result = UploadCarePlus._getPublicKey();
   test.equal(result, '<ANY>');
 
   delete Meteor.settings.public.uploadcare.public_key;
   Meteor.settings.public.uploadcare.publickey = '<ANY>';
-  result = UCPlus._getPublicKey();
+  result = UploadCarePlus._getPublicKey();
   test.equal(result, '<ANY>');
 
   Meteor.settings = {}; // restore
@@ -28,7 +28,7 @@ Tinytest.add('setInitParams with some settings', function(test) {
   Meteor.settings.public.uploadcare.cdn_base = 'http://cdn.com';
   Meteor.settings.public.uploadcare.preview_step = false;
 
-  UCPlus._setInitParams('public_key');
+  UploadCarePlus._setInitParams('public_key');
   test.equal(window.UPLOADCARE_PUBLIC_KEY, 'public_key');
   test.equal(window.UPLOADCARE_CDN_BASE, 'http://cdn.com');
   test.isFalse(window.UPLOADCARE_PREVIEW_STEP);
@@ -41,5 +41,5 @@ Tinytest.add('setInitParams with some settings', function(test) {
 });
 
 Tinytest.add('loadUploadcare with invalid public key type', function(test) {
-  test.throws(function() { UCPlus.loadUploadcare({}); });
+  test.throws(function() { UploadCarePlus.loadUploadcare({}); });
 });

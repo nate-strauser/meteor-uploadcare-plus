@@ -9,7 +9,7 @@ Package.on_use(function(api) {
   api.versionsFrom("1.0");
   api.use(["check", "ui"], "client");
   api.add_files(["client.js"], "client");
-  api.export(["loadUploadcare", "UCPlus"], "client");
+  api.export(["loadUploadcare", "UploadCarePlus"], "client");
 });
 
 Package.on_test(function(api) {

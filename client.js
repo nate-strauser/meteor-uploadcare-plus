@@ -1,7 +1,7 @@
-UCPlus = {};
+UploadCarePlus = {};
 
 // Private
-UCPlus._getPublicKey = function() {
+UploadCarePlus._getPublicKey = function() {
   if (! (Meteor.settings && Meteor.settings.public &&
          Meteor.settings.public.uploadcare)) {
     if (typeof console !== "undefined") {
@@ -21,7 +21,7 @@ UCPlus._getPublicKey = function() {
 }
 
 // Private
-UCPlus._setInitParams = function(public_key) {
+UploadCarePlus._setInitParams = function(public_key) {
   window.UPLOADCARE_PUBLIC_KEY = public_key;
 
   settings = Meteor.settings.public.uploadcare;
@@ -36,7 +36,7 @@ UCPlus._setInitParams = function(public_key) {
 }
 
 // Public
-UCPlus.loadUploadcare = function(public_key, callback) {
+UploadCarePlus.loadUploadcare = function(public_key, callback) {
   // TODO: Shift arguments to support just callback
   if (typeof window.uploadcare === "undefined") {
     if (! public_key) {
@@ -78,8 +78,8 @@ UCPlus.loadUploadcare = function(public_key, callback) {
 // Public (deprecated)
 loadUploadcare = function(key, callback) {
   console.log("uploadcare-plus - loadUploadcare is deprecated. " +
-              "Use UCPlus.loadUploadcare instead")
-  UCPlus.loadUploadcare(key, callback);
+              "Use UploadCarePlus.loadUploadcare instead")
+  UploadCarePlus.loadUploadcare(key, callback);
 }
 
 // Public
